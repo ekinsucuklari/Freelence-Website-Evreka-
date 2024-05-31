@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teslim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url(../teslim.png);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .job-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .job {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+        }
+        .job button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 600px) {
+            .job-container {
+                width: 90%; /* Adjust width as needed for smaller screens */
+            }
+
+            .job {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+                align-items: flex-start; /* Align items to the start on smaller screens */
+            }
+
+            .job button {
+                margin-top: 10px; /* Add margin between the text and the button on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="job-container">
+        <div class="job">
+            <span>İş Başlığı 1</span>
+            <button onclick="deliverJob(1)">Teslim Et</button>
+        </div>
+        <div class="job">
+            <span>İş Başlığı 2</span>
+            <button onclick="deliverJob(2)">Teslim Et</button>
+        </div>
+        <div class="job">
+            <span>İş Başlığı 3</span>
+            <button onclick="deliverJob(3)">Teslim Et</button>
+        </div>
+    </div>
+
+    <script>
+        function deliverJob(jobId) {
+            // Burada işi teslim etme işlemlerini gerçekleştirebilirsiniz.
+            // Örneğin, bir API'ye istek göndermek veya işlemleri güncellemek gibi.
+            console.log("İş teslim edildi: " + jobId);
+            // İşlemi gerçekleştikten sonra sayfayı güncelleyebilirsiniz.
+            // Örneğin: window.location.reload();
+        }
+    </script>
+</body>
+</html>

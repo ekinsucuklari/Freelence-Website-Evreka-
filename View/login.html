@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            overflow: scroll;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .login-container {
+            background-color: #ffffff80;
+            padding: 20px;
+            width: 90%;
+            max-height: calc(100vh - 20px); /* Set max-height to 100% of the viewport height minus any margin or padding */
+            overflow-y: auto; /* Add a vertical scrollbar if the content overflows */
+            margin-right: 2%;
+            margin-top: 8%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .login-container {
+                width: 500px; /* Set the original width for larger screens */
+            }
+        }
+
+        .form-group {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group,
+        button {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab a {
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: #ECB928;
+            color: #fff;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .tab a:hover {
+            background-color: #457FE390;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+       
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease; /* Add a smooth transition for border color */
+        }
+
+    
+        button {
+            background-color: #EC8DD1;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #457FE390;
+        }
+
+        .section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background-size: cover;
+        }
+
+        #section1 {
+            background-image: url(../evreka.png);
+        }
+
+        #section2 {
+            background-image: url(../misyon.png);
+        }
+
+        #section3 {
+            background-image: url(../iş.png);
+        }
+
+        #section3 {
+            display: flex;
+            justify-content: flex-end;
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <div class="section" id="section1">
+        <!-- Background image for section 1 -->
+    </div>
+
+    <!-- Second section with background image 2 -->
+    <div class="section" id="section2">
+        <!-- Background image for section 2 -->
+    </div>
+    <div class="section" id="section3">
+        <div class="login-container">
+            <div class="tab">
+                <a href="#form" onclick="showTab('login')">Giriş Yap</a>
+                <a href="#form" onclick="showTab('signup')">Kaydol</a>
+            </div>
+            <div class="content" id="loginTab">
+                <h2>Giriş Yapma</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmail">E Posta:</label>
+                        <input type="email" id="loginEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Şifre:</label>
+                        <input type="password" id="loginPassword" pattern=".{6,}" title="Password must be at least 6 characters" required>
+                    </div>
+                    <button type="submit">Giriş Yap</button>
+                </form>
+            </div>
+            <div class="content" id="signupTab" style="display: none;">
+                <h2>Kaydolma</h2>
+                <div class="tab">
+                    <a href="#form" name="eko" onclick="showSubTab('employer')">İşveren Olarak </a>
+                    <a href="#form" name="eko" onclick="showSubTab('freelancer')">Freelancer Olarak </a>
+                </div>
+                <div class="content" id="employerTab">
+                    <form>
+                        <div class="form-group">
+                            <label for="signupName">Adınız:</label>
+                            <input type="text" id="signupName" pattern="^[^0-9]+$" title="Name should not contain numbers" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">E Posta:</label>
+                            <input type="email" id="signupEmail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Şifre:</label>
+                            <input type="password" id="signupPassword" pattern=".{6,}" title="Password must be at least 6 characters" required>
+                        </div>
+                        <button type="button">İşveren Olarak Kaydol</button>
+                    </form>
+                </div>
+                <div class="content" id="freelancerTab" style="display: none;">
+                    <form>
+                        <div class="form-group">
+                            <label for="signupName">Adınız:</label>
+                            <input type="text" id="signupName" pattern="^[^0-9]+$" title="Name should not contain numbers" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">E Posta:</label>
+                            <input type="email" id="signupEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Şifre:</label>
+                            <input type="password" id="signupPassword" pattern=".{6,}" title="Password must be at least 6 characters" required>
+                        </div>
+                        <button type="button">Freelancer Olarak Kaydol</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkCredentials() {
+            
+            const KullaniciAdi = document.getElementById('loginEmail').value;
+            const Sifre = document.getElementById('loginPassword').value;
+
+            fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({ KullaniciAdi, Sifre }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.token) {
+                        alert("Başarı" + data.token);
+                        document.getElementById('signupTab').innerHTML = '<h2>Yeni İçerik</h2>';
+                    } else {
+                        alert("Başarısız Giriş Lütfen Tekrar Deneyin");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function showTab(tabName) {
+            if (tabName === 'login') {
+                document.getElementById('loginTab').style.display = 'block';
+                document.getElementById('signupTab').style.display = 'none';
+            } else {
+                document.getElementById('loginTab').style.display = 'none';
+                document.getElementById('signupTab').style.display = 'block';
+            }
+        }
+        function showSubTab(subTabName) {
+            if (subTabName === 'employer') {
+                document.getElementById('employerTab').style.display = 'block';
+                document.getElementById('freelancerTab').style.display = 'none';
+            } else {
+                document.getElementById('employerTab').style.display = 'none';
+                document.getElementById('freelancerTab').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İş Envanteri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            background-image: url(../envanter.png);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        #header {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+            z-index: 1;
+        }
+
+
+        #ilan-olustur,
+        #para-ekle {
+            margin-top: 10px;
+            background-color: #4cafa5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100px;
+            /* Genişlik */
+            height: 15px;
+            /* Yükseklik */
+            text-align: center;
+        }
+
+        #ilan-olustur:hover {
+            background-color: #45a049;
+        }
+
+        #para-ekle:hover {
+            background-color: #45a049;
+        }
+
+        #para-ekle {
+            cursor: pointer;
+            margin-left: auto;
+            /* Bakiye Ekle butonunu sağ tarafa konumlandırır */
+        }
+
+        #para {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            padding: 10px;
+            text-align: right;
+            border-radius: 15px;
+            /* Elips kenar yarıçapı */
+            background-color: #f5f5f5;
+            /* Arka plan rengi */
+            display: inline-block;
+            /* İçeriği çevreleyen blok oluşturur */
+        }
+
+        #para i {
+            margin-right: 5px;
+        }
+
+        .ilans{
+            position: relative;
+            top: 70px;
+        }
+        #ilan-container {
+            padding-top: 50px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 60%; /* Modified for responsiveness */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Modified for responsiveness */
+        }
+
+
+        .ilan-left,
+        .ilan-right {
+            width: 100%; /* Modified for responsiveness */
+            padding: 15px;
+            border-right: none; /* Removed border for responsiveness */
+        }
+        @media (min-width: 768px) {
+            #header {
+                padding: 10px;
+            }
+            #ilan-olustur,/*burayı tam anlamadım dikkaatttt*/
+            #para-ekle {
+                width: auto;
+            }
+
+            #ilan-container {
+                flex-direction: row;
+            }
+
+            .ilan-left,
+            .ilan-right {
+                width: 50%;
+                border-right: 1px solid #ccc;
+            }
+        }
+        .ilan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .ilan-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .ilan-description {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .basvuran-bilgileri {
+            margin-top: 10px;
+        }
+
+        .kisi-bilgileri {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: 'Peter Bold', sans-serif;
+        }
+
+        .aciklama {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .kabul-buton,
+        .ret-buton {
+            width: 50px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            padding: 0;
+            /* Padding'i sıfırlayarak içeriği kenara yaklaştırın */
+            border-radius: 20px;
+            /* Yuvarlak köşeler için border-radius kullanın */
+        }
+
+        .kabul-buton {
+            background-color: #4CAF50;
+            color: white;
+            margin-right: 5px;
+            /* Kabulu ret butonundan biraz ayırın */
+        }
+
+        .ret-buton {
+            background-color: #f44336;
+            color: black;
+            margin-left: 5px;
+            /* Kabulu ret butonundan biraz ayırın */
+        }
+
+        .buton-container {
+            display: flex;
+            justify-content: center;
+            /* Butonları merkezle */
+            margin-top: 15px;
+        }
+
+        /* Güncellenmiş padding ayarı */
+        .ret-buton,
+        .kabul-buton {
+            padding: 10px;
+            /* Ret ve kabul butonu için padding değerini artırabilirsiniz */
+        }
+
+        .icon {
+            margin-right: 0px;
+        }
+
+        /* Yeni Eklenen Stil */
+        .ilan-container {
+            padding-left: 15px;
+            /* Sola kaydırma miktarı */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="left-buttons">
+            <div id="ilan-olustur" onclick="ilanOlustur()">İlan Oluştur</div>
+
+        </div>
+        <div id="para-ekle" onclick="bakiyeEkle()">Bakiye Ekle</div>
+        <div id="para"><i class="fas fa-coins"></i> 5000 TL</div>
+    </div>
+
+    <div class="ilans">
+        <div id="ilan-container">
+            <div class="ilan-left">
+                <div class="ilan-header">
+                    <div class="ilan-title">Web Developer İş İlanı</div>
+                </div>
+                <div class="ilan-description">
+                    <p>Açıklama: Lorem ipsum dolor sit amet.</p>
+                    <p>DENENEEEE</p>
+                </div>
+            </div>
+            <div class="ilan-right">
+                <div class="basvuran-bilgileri">
+                    <div class="kisi-bilgileri">
+                        <p style="font-family: 'Peter Bold', sans-serif;">John Doe</p>
+                    </div>
+                    <div class="aciklama">
+                        <p>Web development konusunda deneyimli bir profesyonel.</p>
+                    </div>
+                    <div class="buton-container">
+                        <div class="kabul-buton"><span class="icon">&#10004;</span></div>
+                        <div class="ret-buton"><span class="icon">&#10060;</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ilan-container">
+            <div class="ilan-left">
+                <div class="ilan-header">
+                    <div class="ilan-title">Web Developer İş İlanı</div>
+                </div>
+                <div class="ilan-description">
+                    <p>Açıklama: Lorem ipsum dolor sit amet.</p>
+                    <p>DENENEEEE</p>
+                </div>
+            </div>
+            <div class="ilan-right">
+                <div class="basvuran-bilgileri">
+                    <div class="kisi-bilgileri">
+                        <p style="font-family: 'Peter Bold', sans-serif;">John Doe</p>
+                    </div>
+                    <div class="aciklama">
+                        <p>Web development konusunda deneyimli bir profesyonel.</p>
+                    </div>
+                    <div class="buton-container">
+                        <div class="kabul-buton"><span class="icon">&#10004;</span></div>
+                        <div class="ret-buton"><span class="icon">&#10060;</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    <!-- JavaScript ile sayfa yönlendirme işlemi -->
+    <script>
+        function ilanOlustur() {
+            window.location.href = 'işverme.html'; // İlan oluştur sayfasının yolunu belirtin
+        }
+    </script>
+</body>
+
+
+</html>

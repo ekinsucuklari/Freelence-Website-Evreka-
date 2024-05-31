@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlan Formu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url(../ilan.png);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .ilan-form {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparan beyaz arka plan */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%; /* Formun genişliğini ayarlayabilirsiniz */
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4cafa5;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 768px) {
+            .ilan-form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ilan-form">
+        <h2>Proje İlanı Formu</h2>
+        <form action="İşverenEnvanter.html" method="post">
+            <label for="baslik">İlan Başlığı:</label>
+            <input type="text" id="baslik" name="baslik" required>
+            <label for="icerik">İlan İçeriği:</label>
+            <textarea id="icerik" name="icerik" rows="4" required></textarea>
+            <label for="sure">Tamamlanması İstenen Süre:</label>
+            <input type="text" id="sure" name="sure" required>
+            <label for="odeme">Ödeme Miktarı:</label>
+            <input type="text" id="odeme" name="odeme" required>
+            <button type="submit">İlanı Yayınla</button>
+        </form>
+    </div>
+</body>
+</html>

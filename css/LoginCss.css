@@ -1,0 +1,96 @@
+
+.login-page-width {
+    background: -webkit-linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, rgb(159, 226, 201) 100%);
+}
+.login-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 400px;
+    margin: 0 auto;
+  }
+  .login-page-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+  .login-container .tab {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eee;
+    padding: 15px;
+    font-size: 18px;
+  }
+  .login-container h2 {
+    text-align: center !important;
+  }
+
+  .login-container .tab a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+ .login-container .tab a:hover {
+    color: #007bff;
+  }
+
+ .login-container .content {
+    padding: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+ .login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+ .login-container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+ .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00B074;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+ .login-container button:hover {
+    background-color: #2B9BFF;
+  }
+  a.btn.btn-primary.rounded-0.py-4.px-lg-5.d-none.d-lg-block {
+display: flex !important;
+justify-content: center;
+align-items: center;
+padding: 1rem;
+height: 50px;
+width: 100px;
+border-radius: 50px !important;
+ background: transparent; 
+}
+div#navbarCollapse {
+padding-right: 2rem;
+}
+
+@media (max-width: 1000px) {
+    div#navbarCollapse {
+        padding-bottom: 1rem !important;
+    }
+}

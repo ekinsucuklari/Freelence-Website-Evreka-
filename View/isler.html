@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css\style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Bebas+Neue:wght@400&display=swap"
+        rel="stylesheet">
+    <title>İş İlanları</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url(../lists.png);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #144c59;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .btn-ufak-isler {
+            background-color: #55b758;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: auto; /* Adjusted margin-right to auto */
+            transition: background-color 0.3s;
+        }
+
+        .balance-box {
+            background-color: #fff;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: auto; /* Adjusted margin-left to auto */
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            margin: 0 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: #ECB928;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 70px;
+        }
+
+        .job {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            width: 100%; /* Adjusted width for full-width on small screens */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+        }
+
+        .job-details {
+            flex: 1;
+        }
+
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .job-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .apply-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .micro-transactions-container {
+            display: none;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            width: 100%; /* Adjusted width for full-width on small screens */
+            max-width: 100%; /* Adjusted max-width for full-width on small screens */
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Added media query for responsiveness */
+        @media screen and (min-width: 768px) {
+            .job {
+                width: calc(50% - 20px);
+            }
+
+            .micro-transactions-container {
+                width: calc(50% - 20px);
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: 50px;
+            }
+        }
+        
+        .micro-transactions-container .micro-transactions {
+            display: flex;
+            flex-direction: row; /* Display children elements in a row */
+            align-items: center; /* Center children vertically */
+            justify-content: space-between; /* Space evenly between children */
+        }
+
+        .micro-transactions-container h3 {
+            font-size: 18px; /* Adjust font size as needed */
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .micro-transactions-container .micro-transaction-job {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .micro-transactions-container .micro-transaction-job p {
+            flex: 1;
+            color: #333;
+            margin-right: 10px; /* Add margin between title/details and button */
+        }
+
+        .micro-transactions-container .micro-transaction-job a {
+            background-color: #7dafe4;
+            color: white;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        .micro-button{
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="header">
+        <button class="btn-ufak-isler" onclick="toggleMicroTransactions()">Ufak İşler</button>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Arama yapın...">
+            <button class="search-button">Ara</button>
+        </div>
+        <div class="balance-box">
+            Bakiye: $5000
+        </div>
+    </div>
+
+    <div class="container" id="jobContainer">
+        <!-- İş İlanları -->
+        <div class="job">
+            <div class="job-title">Yazılım Geliştirici İlanı 1</div>
+            <div class="job-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper metus eu enim dictum, a varius nisl tristique.
+            </div>
+            <div class="price-container">
+                <div>Fiyat: $1000</div>
+                <button class="apply-button" onclick="applyJob(1000)">Başvur</button>
+            </div>
+        </div>
+
+        <!-- Diğer iş ilanları buraya eklenebilir -->
+    </div>
+
+    <!-- Mikro İşler Modülü -->
+    <div class="micro-transactions-container" id="microTransactionsContainer">
+        <div class="micro-transactions">
+            <h3>Instagram hesabına abone olma</h3>
+            <div class="micro-transaction-job">
+                <p>Instagram'a abone ol </p>
+                <a href="https://www.instagram.com/hesapadi" target="_blank">Hesaba Ulaşın</a>
+            </div>
+            <!-- Diğer mikro işler buraya eklenebilir -->
+            
+            <button class="micro-button" onclick="performMicroTransactions()">Mikro İşleri Tamamla</button>
+        </div>
+    </div>
+
+    <script>
+        function applyJob(price) {
+            // İş başvurusu yapıldığında burada gerekli işlemleri yapabilirsiniz.
+            // Örneğin, iş başvurusu yapılan fiyatı kullanıcının bakiyesinden düşebilirsiniz.
+            // Ayrıca mikro işler modülü ile ilgili kontrolleri de burada yapabilirsiniz.
+        }
+
+        function performMicroTransactions() {
+            // Mikro işlerin tamamlanması için gerekli işlemleri yapabilirsiniz.
+            // Seçilen işlere göre kullanıcının bakiyesini güncelleyebilirsiniz.
+            // Örneğin, Instagram'a abone olma işlemi için bakiyeden 1 birim düşebilir.
+        }
+
+        function toggleMicroTransactions() {
+            var microTransactionsContainer = document.getElementById('microTransactionsContainer');
+            var jobContainer = document.getElementById('jobContainer');
+
+            if (window.getComputedStyle(microTransactionsContainer).display === 'none') {
+                microTransactionsContainer.style.display = 'block';
+                jobContainer.style.display = 'none';
+            } else {
+                microTransactionsContainer.style.display = 'none';
+                jobContainer.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+/* Login Page */
+.login-page-width {
+    background: -webkit-linear-gradient(90deg, hsla(270, 94%, 25%, 1) 0%, rgb(159, 226, 201) 100%);
+}   
+
+.login-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 400px;
+    margin: 0 auto;
+    display: none;
+  }
+  .show-login {
+    display: block !important;
+}
+  .login-page-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+  .login-container .tab {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eee;
+    padding: 15px;
+    font-size: 18px;
+  }
+  .login-container h2 {
+    text-align: center !important;
+  }
+
+  .login-container .tab a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+ .login-container .tab a:hover {
+    color: #007bff;
+  }
+
+ .login-container .content {
+    padding: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+ .login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+ .login-container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+ .login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00B074;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+ .login-container button:hover {
+    background-color: #2B9BFF;
+  }
+  a.btn.btn-primary.rounded-0.py-4.px-lg-5.d-none.d-lg-block {
+display: flex !important;
+justify-content: center;
+align-items: center;
+padding: 1rem;
+height: 50px;
+width: 100px;
+border-radius: 50px !important;
+/* background: transparent; */
+}
+/*div#navbarCollapse {
+padding-right: 2rem;
+}
+
+@media (max-width: 1000px) {
+    div#navbarCollapse {
+        padding-bottom: 1rem !important;
+    }
+}*/
+/*** Job Listing ***/
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  text-align: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000; /* Diğer elemanların üzerine çıkmasını sağla */
+}
+
+.balance-box {
+  float: right;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+  margin: 100px auto 20px auto; /* Üstteki boşluğu ayarla */
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* Header'ın altında kalmasını sağla */
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 60%;
+  font-size: 16px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: #34db98;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.job {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.job-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.job-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.price-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.apply-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-top: auto; /* Yerleştirme için alttaki boşluğu kullan */
+}
+
+.separator {
+  width: 100%;
+  height: 2px;
+  background-color: #ddd;
+  margin: 20px 0; /* İki ilan arasındaki mesafeyi ayarla */
+}
+.btn-ufak-isler {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.micro-transactions-container {
+  display: none; /* Başlangıçta gizli tutuyoruz */
+  margin-top: 20px;
+}
+/* Yeni CSS Stilleri */
+.micro-transactions-container {
+  display: none;
+  margin-top: 90px;
+}
+
+.micro-transactions {
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: #e48282;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.micro-transactions h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.micro-transaction-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.micro-transaction-item img {
+  width: 30px;
+  height: auto; /* Ekledik: Oranları koruyarak boyut ayarla */
+  max-width: 30px; /* Ekledik: Maksimum genişlik */
+  margin-right: 10px;
+}
+
+.micro-transaction-details p {
+  margin: 0;
+}
+
+.micro-transaction-details a {
+  color: #007BFF;
+  text-decoration: none;
+}
+/* Yeni Eklenen Stil */
+.micro-transaction-job {
+  display: flex;
+  align-items: center;
+}
